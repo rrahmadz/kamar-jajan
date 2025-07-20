@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kamar Jajan</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        body {
+            background-color: #F1E0C7;
+            color: #382E36;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #FFEB47;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+            position: relative; top: 0;
+        }
+
+        .logo {
+            font-size: 1rem;
+            letter-spacing: 1px;
+            color: #382E36;
+            text-transform: uppercase;
+        }
+
+        .tagline {
+            font-size: 1rem;
+            margin: 0.5rem 0;
+        }
+
+        /* Main Content Styles */
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1rem;
+            overflow-y: auto;
+        }
+
+        .gallery {
+            width: 100%;
+            max-width: 600px; /* Limit max width for better desktop viewing */
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .gallery-item {
+            width: 100%;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.02);
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            aspect-ratio: 2480 / 3508; /* Maintain A4 portrait ratio */
+            object-fit: cover;
+        }
+
+        /* Contact Button Styles */
+        .contact-btn-container {
+            position: fixed;
+            bottom: 2rem;
+            right: 1.5rem;
+            z-index: 100;
+        }
+
+        .contact-btn {
+            background-color: #00BCD4;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .contact-btn:hover {
+            background-color: #00a8c0;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .contact-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #382E36;
+            color: #F1E0C7;
+            text-align: center;
+            padding: 1rem;
+            font-size: 0.8rem;
+        }
+
+        /* Desktop Styles */
+        @media (min-width: 768px) {
+            .gallery {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 2rem;
+            }
+
+            .gallery-item {
+                width: calc(50% - 1rem);
+                max-width: 400px;
+            }
+
+            .contact-btn-container {
+                right: 2.5rem;
+                bottom: 2.5rem;
+            }
+
+            .contact-btn {
+                width: 70px;
+                height: 70px;
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="20250617.png" alt="Logo" class="logo-img" style="width: 100px; height: 100px;">
+        <div class="tagline">Jajanan sehat ala Rahmad</div>
+    </header>
+
+    <main>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="20250622.jpg" alt="Product 1" class="gallery-img">
+            </div>
+            <div class="gallery-item">
+                <img src="20250612.jpg" alt="Product 2" class="gallery-img">
+            </div>
+            <div class="gallery-item">
+                <img src="https://via.placeholder.com/2480x3508/F1E0C7/382E36?text=Product+3" alt="Product 3" class="gallery-img">
+            </div>
+            <div class="gallery-item">
+                <img src="https://via.placeholder.com/2480x3508/F1E0C7/382E36?text=Product+4" alt="Product 4" class="gallery-img">
+            </div>
+        </div>
+    </main>
+
+    <div class="contact-btn-container">
+        <button class="contact-btn" onclick="contactUs()">📞</button>
+    </div>
+
+    <footer>
+        &copy; 2025 Kamar Jajan.
+    </footer>
+
+    <script>
+        function contactUs() {
+            // Replace with your actual WhatsApp number
+            const phoneNumber = '628999306237';
+            const message = 'Hello Kamar Jajan, I want to inquire about your products!';
+
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+        }
+
+    </script>
+</body>
+</html>
