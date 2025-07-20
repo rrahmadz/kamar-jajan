@@ -1,2 +1,2 @@
 # kamar-jajan
-program menu digital untuk kamar jajan.
+program e-menu untuk kamar jajan.
